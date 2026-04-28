@@ -41,6 +41,7 @@ const dataVisualizationRoutes = require('./routes/dataVisualization');
 const reinsuranceRoutes = require('./routes/reinsurance');
 const fraudContractsRoutes = require('./routes/fraudContracts');
 const blockchainRoutes = require('./routes/blockchain');
+const mlopsRoutes = require('./routes/mlops');
 
 
 const { initializeDatabase } = require('./database/init');
@@ -119,6 +120,7 @@ app.use('/api/database-optimization', authenticateToken, databaseOptimizationRou
 
 // ── Blockchain Integration Layer ─────────────────────────────────────────
 app.use('/api/blockchain', blockchainRoutes);
+app.use('/api/mlops', authenticateToken, mlopsRoutes);
 
 // ── Notification system ──────────────────────────────────────────────────
 app.use('/api/notifications/preferences',  authenticateToken, notificationPreferencesRoutes);
